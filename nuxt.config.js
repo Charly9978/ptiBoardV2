@@ -50,14 +50,14 @@ export default {
       '@nuxtjs/firebase',
       {
         config: {
-          apiKey: "AIzaSyA6be7s7w4g76Qaaq4ALtsxa7X04T_r1LQ",
-          authDomain: "test-nuxt-1fa1b.firebaseapp.com",
-          databaseURL: "https://test-nuxt-1fa1b.firebaseio.com",
-          projectId: "test-nuxt-1fa1b",
-          storageBucket: "test-nuxt-1fa1b.appspot.com",
-          messagingSenderId: "108653704520",
-          appId: "1:108653704520:web:090ee196f4604a1cb02f7d",
-          measurementId: "G-EBMLLSKTX9"
+          apiKey: ,
+          authDomain: ,
+          databaseURL: ,
+          projectId: ,
+          storageBucket: ,
+          messagingSenderId: ,
+          appId: ,
+          measurementId: 
         },
         services: {
           auth: {
