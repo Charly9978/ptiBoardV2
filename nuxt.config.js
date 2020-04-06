@@ -1,3 +1,4 @@
+require('dotenv').config()
 
 export default {
   mode: 'spa',
@@ -38,7 +39,8 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/dotenv'
   ],
   /*
   ** Nuxt.js modules
@@ -50,14 +52,13 @@ export default {
       '@nuxtjs/firebase',
       {
         config: {
-          apiKey: "AIzaSyA6be7s7w4g76Qaaq4ALtsxa7X04T_r1LQ",
-          authDomain: "test-nuxt-1fa1b.firebaseapp.com",
-          databaseURL: "https://test-nuxt-1fa1b.firebaseio.com",
-          projectId: "test-nuxt-1fa1b",
-          storageBucket: "test-nuxt-1fa1b.appspot.com",
-          messagingSenderId: "108653704520",
-          appId: "1:108653704520:web:090ee196f4604a1cb02f7d",
-          measurementId: "G-EBMLLSKTX9"
+          apiKey: process.env.FB_APIKEY,
+          authDomain: process.env.FB_AUTHDOMAIN,
+          databaseURL: process.env.FB_DATABASEURL,
+          projectId: process.env.FB_PROJECTID,
+          storageBucket: process.env.FB_STORAGEBUCKET,
+          messagingSenderId: process.env.FB_MESSAGINGSENDERID,
+          appId: process.env.FB_APPID
         },
         services: {
           auth: {
@@ -90,6 +91,13 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+      config.module.rules.push({
+        test: /\.(ogg|mp3|wav|mpe?g)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]'
+        }
+      })
     }
   }
 }
