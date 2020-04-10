@@ -5,7 +5,7 @@
 </audio>
     <v-navigation-drawer v-model="drawer" app>
       <v-list dense>
-        <v-list-item link>
+        <v-list-item link to="/dashboard" nuxt>
           <v-list-item-action>
             <v-icon>mdi-home</v-icon>
           </v-list-item-action>
@@ -91,6 +91,14 @@ export default {
 
     bellOff(){
       this.$store.commit('setAlarmOff')
+    }
+  },
+
+  async mounted() {
+    try {
+      await this.$store.dispatch("devices/bindDevices");
+    } catch (e) {
+      console.error(e);
     }
   }
 };

@@ -2,7 +2,8 @@
 import { vuexfireMutations } from 'vuexfire'
 
 export const state = ()=>({
-  alarm: false
+  alarm: false,
+  title: 'Tableau de bord Bip PTI'
 })
 
 
@@ -16,6 +17,10 @@ export const mutations = {
 
     setAlarmOff: (state)=>{
       state.alarm = false
+    },
+
+    setTitle(state,title){
+      state.title = title
     }
 
 

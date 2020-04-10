@@ -21,14 +21,6 @@ export default {
     devices() {
       return this.$store.getters["devices/getDevices"];
     }
-  },
-
-  async mounted() {
-    try {
-      await this.$store.dispatch("devices/bindDevices");
-    } catch (e) {
-      console.error(e);
-    }
   }
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <v-card pb-3 width="240" class="indigo lighten-4" hover :to="`./device/${device.id}`">
+  <v-card pb-3 width="240" class="indigo lighten-4" hover nuxt :to="`./devices/${device.id}`">
     <v-card-title v-if="device.lostConnection" primary-title class="error">
       <div>
         <span class="headline">{{device.name}}</span>

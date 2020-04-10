@@ -5,13 +5,11 @@ export const state= ()=>({
 })
 
 export const getters = {
-    getDevices(state){
-        return state.all
-    },
+    getDevices:(state)=>state.all
+    ,
 
-    getDeviceById(state,id){
-        return state.all.find(device => device.id == id)
-    }
+    getDeviceById:(state)=>(id)=>state.all.find(device => device.id == id)
+    
 }
 
 export const actions = {
